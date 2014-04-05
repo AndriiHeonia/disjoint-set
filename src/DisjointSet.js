@@ -24,6 +24,7 @@ DisjointSet.prototype = {
         if (typeof this._relations[key] === 'undefined') {
             this._relations[key] = val;
         }
+        return this;
     },
 
     find: function (val1, val2) {
@@ -41,6 +42,7 @@ DisjointSet.prototype = {
                 this._relations[key] = this._relations[key2];
             };
         }
+        return this;
     },
 
     extract: function () {

@@ -61,3 +61,52 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
         </tr>
     </tbody>
 </table>
+
+## Usage example
+
+    var set = disjointSet(); // Instantiate disjoint-set data structure
+
+    var person1 = {
+        name: 'Volodymyr',
+        surname: 'Velykyj'
+    }
+    var person2 = {
+        name: 'Yaroslav',
+        surname: 'Mydryi'
+    }
+    var person3 = {
+        name: 'Bohdan',
+        surname: 'Khmelnytskyi'
+    }
+    var person4 = {
+        name: 'Ivan',
+        surname: 'Mazepa'
+    }
+    var person5 = {
+        name: 'Viktor',
+        surname: 'Yanukovich'
+    }
+    var person6 = {
+        name: 'Volodymyr',
+        surname: 'Putin'
+    }
+
+    // Add objects to the set
+    set.add(person1)
+        .add(person2)
+        .add(person3)
+        .add(person4)
+        .add(person5)
+        .add(person6);
+
+    // Сonnect some objects to each other
+    set.union(person1, person2);
+    set.union(person2, person3);
+    set.union(person3, person4);
+    set.union(person5, person6);
+
+    // Check connections
+    console.log(set.find(person1, person2)); // returns true. Direct connection
+    console.log(set.find(person1, person4)); // returns true. Indirect connection
+    console.log(set.find(person5, person6)); // returns true. Another direct connection
+    console.log(set.find(person4, person5)); // returns false. No connection
