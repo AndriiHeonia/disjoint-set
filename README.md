@@ -113,6 +113,15 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
     console.log(set.find(person5, person6)); // returns true. Another direct connection
     console.log(set.find(person4, person5)); // returns false. No connection
 
+    /**
+     * returns two arrays:
+     * [
+     *     [person1, person2, person3, person4],
+     *     [person5, person6]
+     * ]
+     */
+    console.log(set.extract());
+
 ## Changelog
 
 ### 1.0 &mdash; 06.04.2014

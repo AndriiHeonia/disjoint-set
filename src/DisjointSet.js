@@ -1,13 +1,11 @@
-/*
- (c) 2014, Andrey Geonya
- https://github.com/dstructjs/disjoint-set
-*/
+/**
+ * (c) 2014, Andrey Geonya
+ * https://github.com/dstructjs/disjoint-set
+ */
 
 // TODO: to think about weighted quick-union or quick union with path compression (Sedjwik, page 231)
 // TODO: to think about stringify optimization
 // TODO: tests
-// TODO: doc
-// TODO: chaining
 (function () { 'use strict';
 
 function disjointSet() {
