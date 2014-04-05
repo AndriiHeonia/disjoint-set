@@ -7,6 +7,7 @@
 // TODO: to think about stringify optimization
 // TODO: tests
 // TODO: doc
+// TODO: chaining
 (function () { 'use strict';
 
 function disjointSet() {
