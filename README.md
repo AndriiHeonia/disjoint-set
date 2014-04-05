@@ -1,4 +1,4 @@
-<img style="width: 70px; height:70px;" src="https://avatars2.githubusercontent.com/u/7190376?s=140" alt="" />
+![](https://avatars2.githubusercontent.com/u/7190376?s=140 =70x70)
 
 Disjoint-set is a data structure that keeps track of a set of elements partitioned into a number of disjoint (non overlapping) subsets. A union–find algorithm is an algorithm that performs two useful operations on such a data structure:
 
