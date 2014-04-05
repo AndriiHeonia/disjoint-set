@@ -10,8 +10,8 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
 <table>
     <thead>
         <tr>
-            <td>Factory</td>
-            <td>Description</td>
+            <th>Factory</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
@@ -33,9 +33,9 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
 <table>
     <thead>
         <tr>
-            <td>Method</td>
-            <td>Returns</td>
-            <td>Description</td>
+            <th>Method</th>
+            <th>Returns</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
@@ -47,7 +47,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
         <tr>
             <td><b>find</b>(&lt;Object&gt; val1, &lt;Object&gt; val2)</code></td>
             <td>Boolean</td>
-            <td>Returns true when val1 and val2 are connected./</td>
+            <td>Returns true when val1 and val2 are connected.</td>
         </tr>
         <tr>
             <td><b>union</b>(&lt;Object&gt; val1, &lt;Object&gt; val2)</code></td>
