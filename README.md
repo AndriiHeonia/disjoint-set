@@ -1,10 +1,12 @@
-<img src="https://avatars2.githubusercontent.com/u/7190376?s=140" width="50px" height="50px" />
+<img style="float:left;" src="https://avatars2.githubusercontent.com/u/7190376?s=140" width="50px" height="50px" />
 
+<div style="float: left;">
 Disjoint-set is a data structure that keeps track of a set of elements partitioned into a number of disjoint (non overlapping) subsets. A union–find algorithm is an algorithm that performs two useful operations on such a data structure:
 
 * Find: Determine which subset a particular element is in. This can be used for determining if two elements are in the same subset;
 * Union: Join two subsets into a single subset.
 
+</div>
 ## API
 
 ### Creation
@@ -66,7 +68,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
 
 ## Usage example
 
-    var set = disjointSet(); // Instantiate disjoint-set data structure
+    var set = disjointSet(); // instantiate disjoint-set data structure
 
     var person1 = {
         name: 'Volodymyr',
@@ -93,7 +95,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
         surname: 'Putin'
     }
 
-    // Add objects to the set
+    // add objects to the set
     set.add(person1)
         .add(person2)
         .add(person3)
@@ -101,13 +103,13 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
         .add(person5)
         .add(person6);
 
-    // Сonnect some objects to each other
+    // connect some objects to each other
     set.union(person1, person2);
     set.union(person2, person3);
     set.union(person3, person4);
     set.union(person5, person6);
 
-    // Check connections
+    // check connections
     console.log(set.find(person1, person2)); // returns true. Direct connection
     console.log(set.find(person1, person4)); // returns true. Indirect connection
     console.log(set.find(person5, person6)); // returns true. Another direct connection
