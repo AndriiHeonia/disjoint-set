@@ -53,7 +53,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
         </tr>
         <tr>
             <td><b>find</b>(&lt;Object&gt; val)</code></td>
-            <td>Boolean</td>
+            <td>String</td>
             <td>Returns identifier for a given value.</td>
         </tr>
         <tr>
@@ -136,7 +136,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
 ### 1.0.1 &mdash; 07.04.2014
 
 * connected() method added
-* find method changed
+* find() method changed
 
 ### 1.0 &mdash; 06.04.2014
 
