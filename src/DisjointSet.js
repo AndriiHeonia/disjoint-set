@@ -32,12 +32,9 @@ DisjointSet.prototype = {
     },
 
     union: function (val1, val2) {
-        var key1 = JSON.stringify(val1),
-            key2 = JSON.stringify(val2);
-
         for (var key in this._relations) {
-            if (this._relations[key] === this._relations[key1]) {
-                this._relations[key] = this._relations[key2];
+            if (this._relations[key] === this.find(val1)) {
+                this._relations[key] = this.find(val2);
             };
         }
         return this;
