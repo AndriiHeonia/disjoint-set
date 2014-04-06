@@ -4,8 +4,6 @@
  */
 
 // TODO: to think about weighted quick-union or quick union with path compression (Sedjwik, page 231)
-// TODO: to think about stringify optimization
-// TODO: tests
 (function () { 'use strict';
 
 function disjointSet() {
@@ -25,10 +23,12 @@ DisjointSet.prototype = {
         return this;
     },
 
-    find: function (val1, val2) {
-        var key1 = JSON.stringify(val1),
-            key2 = JSON.stringify(val2);
-        return this._relations[key1] === this._relations[key2] ? true : false;
+    find: function (val) {
+        return this._relations[JSON.stringify(val)];
+    },
+
+    connected: function (val1, val2) {
+        return this.find(val1) === this.find(val2) ? true : false;
     },
 
     union: function (val1, val2) {

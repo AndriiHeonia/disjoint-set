@@ -47,14 +47,19 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
             <td>Adds object to the set.</td>
         </tr>
         <tr>
-            <td><b>find</b>(&lt;Object&gt; val1, &lt;Object&gt; val2)</code></td>
-            <td>Boolean</td>
-            <td>Returns true when val1 and val2 are connected.</td>
-        </tr>
-        <tr>
             <td><b>union</b>(&lt;Object&gt; val1, &lt;Object&gt; val2)</code></td>
             <td>Boolean</td>
             <td>Сonnects val1 with val2.</td>
+        </tr>
+        <tr>
+            <td><b>find</b>(&lt;Object&gt; val)</code></td>
+            <td>Boolean</td>
+            <td>Returns identifier for a given value.</td>
+        </tr>
+        <tr>
+            <td><b>connected</b>(&lt;Object&gt; val1, &lt;Object&gt; val2)</code></td>
+            <td>Boolean</td>
+            <td>Returns true when val1 and val2 are connected.</td>
         </tr>
         <tr>
             <td><b>extract</b>()</code></td>
@@ -122,7 +127,16 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
      */
     console.log(set.extract());
 
+## Papers
+
+* Robert Sedgewick and Kevin Wayne, Algorithms, 4th edition, page 216
+
 ## Changelog
+
+### 1.0.1 &mdash; 07.04.2014
+
+* connected() method added
+* find method changed
 
 ### 1.0 &mdash; 06.04.2014
 
