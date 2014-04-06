@@ -113,10 +113,10 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
     set.union(person5, person6);
 
     // check connections
-    console.log(set.find(person1, person2)); // returns true. Direct connection
-    console.log(set.find(person1, person4)); // returns true. Indirect connection
-    console.log(set.find(person5, person6)); // returns true. Another direct connection
-    console.log(set.find(person4, person5)); // returns false. No connection
+    console.log(set.connected(person1, person2)); // returns true. Direct connection
+    console.log(set.connected(person1, person4)); // returns true. Indirect connection
+    console.log(set.connected(person5, person6)); // returns true. Another direct connection
+    console.log(set.connected(person4, person5)); // returns false. No connection
 
     /**
      * returns two arrays grouped by connection:
