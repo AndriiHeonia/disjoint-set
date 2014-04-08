@@ -22,6 +22,9 @@
         "jshint": "~2.5.0"
     },
     "scripts": {
-        "test": "./node_modules/.bin/mocha -R spec"
+        "test": "./node_modules/jshint/bin/jshint src/DisjointSet.js && ./node_modules/.bin/mocha -R spec"
+    },
+    "jshintConfig": {
+        "forin": false
     }
 }

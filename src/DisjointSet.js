@@ -12,7 +12,7 @@ function disjointSet() {
 
 var DisjointSet = function() {
     this._relations = {};
-}
+};
 
 DisjointSet.prototype = {
     add: function (val) {
@@ -35,7 +35,7 @@ DisjointSet.prototype = {
         for (var key in this._relations) {
             if (this._relations[key] === this.find(val1)) {
                 this._relations[key] = this.find(val2);
-            };
+            }
         }
         return this;
     },
@@ -54,8 +54,8 @@ DisjointSet.prototype = {
             }
         }
 
-        for (var key in resObj) {
-            resArr.push(resObj[key]);
+        for (var key1 in resObj) {
+            resArr.push(resObj[key1]);
         }
 
         return resArr;
@@ -64,7 +64,7 @@ DisjointSet.prototype = {
     destroy: function () {
         this._relations = {};
     }
-}
+};
 
 if (typeof define === 'function' && define.amd) {
     define(function() {
