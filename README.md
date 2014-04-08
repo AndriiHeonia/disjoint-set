@@ -127,6 +127,41 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
      */
     console.log(set.extract());
 
+## Order of growth
+
+<table>
+    <thead>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Order of growth</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>add</th>
+                <th>constant</th>
+            </tr>
+            <tr>
+                <th>find</th>
+                <th>constant</th>
+            </tr>
+            <tr>
+                <th>connected</th>
+                <th>constant</th>
+            </tr>
+            <tr>
+                <th>union</th>
+                <th>linear</th>
+            </tr>
+            <tr>
+                <th>extract</th>
+                <th>linear</th>
+            </tr>
+        </tbody>
+    </thead>
+</table>
+
 ## Papers
 
 * Robert Sedgewick and Kevin Wayne, Algorithms, 4th edition, page 216
