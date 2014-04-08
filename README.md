@@ -142,7 +142,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
 ## Development
 
     npm install # install dependencies
-    npm tests   # run tests
+    npm test    # run tests
 
 ## Papers
 
