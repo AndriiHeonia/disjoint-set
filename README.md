@@ -58,7 +58,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
             <td><b>find</b>(&lt;Object&gt; val)</code></td>
             <td>String</td>
             <td>Constant</td>
-            <td>Returns identifier of the set by given value.</td>
+            <td>Returns identifier of the subset by given value.</td>
         </tr>
         <tr>
             <td><b>connected</b>(&lt;Object&gt; val1, &lt;Object&gt; val2)</code></td>
@@ -70,7 +70,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
             <td><b>extract</b>()</code></td>
             <td>Array</td>
             <td>Linear</td>
-            <td>Returns array with all items grouped by connections.</td>
+            <td>Returns all items grouped by subsets.</td>
         </tr>
         <tr>
             <td><b>destroy</b>()</code></td>
