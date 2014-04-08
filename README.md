@@ -139,24 +139,24 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
         </thead>
         <tbody>
             <tr>
-                <th>add</th>
-                <th>constant</th>
+                <td>add</td>
+                <td>constant</td>
             </tr>
             <tr>
-                <th>find</th>
-                <th>constant</th>
+                <td>find</td>
+                <td>constant</td>
             </tr>
             <tr>
-                <th>connected</th>
-                <th>constant</th>
+                <td>connected</td>
+                <td>constant</td>
             </tr>
             <tr>
-                <th>union</th>
-                <th>linear</th>
+                <td>union</td>
+                <td>linear</td>
             </tr>
             <tr>
-                <th>extract</th>
-                <th>linear</th>
+                <td>extract</td>
+                <td>linear</td>
             </tr>
         </tbody>
     </thead>
