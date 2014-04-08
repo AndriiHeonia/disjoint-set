@@ -139,6 +139,11 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
      */
     console.log(set.extract());
 
+## Development
+
+    npm install # install dependencies
+    npm tests   # run tests
+
 ## Papers
 
 * Robert Sedgewick and Kevin Wayne, Algorithms, 4th edition, page 216
