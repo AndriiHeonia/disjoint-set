@@ -37,6 +37,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
         <tr>
             <th>Method</th>
             <th>Returns</th>
+            <th>Order of growth.</th>
             <th>Description</th>
         </tr>
     </thead>
@@ -44,26 +45,31 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
         <tr>
             <td><b>add</b>(&lt;Object&gt; val)</code></td>
             <td>this</td>
+            <td>Constant</td>
             <td>Adds object to the set.</td>
         </tr>
         <tr>
             <td><b>union</b>(&lt;Object&gt; val1, &lt;Object&gt; val2)</code></td>
             <td>Boolean</td>
+            <td>Linear</td>
             <td>Сonnects val1 with val2.</td>
         </tr>
         <tr>
             <td><b>find</b>(&lt;Object&gt; val)</code></td>
             <td>String</td>
+            <td>Constant</td>
             <td>Returns identifier for a given value.</td>
         </tr>
         <tr>
             <td><b>connected</b>(&lt;Object&gt; val1, &lt;Object&gt; val2)</code></td>
             <td>Boolean</td>
+            <td>Constant</td>
             <td>Returns true when val1 and val2 are connected.</td>
         </tr>
         <tr>
             <td><b>extract</b>()</code></td>
             <td>Array</td>
+            <td>Linear</td>
             <td>Returns array with all items grouped by connections.</td>
         </tr>
     </tbody>
@@ -126,41 +132,6 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
      * ]
      */
     console.log(set.extract());
-
-## Order of growth
-
-<table>
-    <thead>
-        <thead>
-            <tr>
-                <th>Method</th>
-                <th>Order of growth</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>add</td>
-                <td>constant</td>
-            </tr>
-            <tr>
-                <td>find</td>
-                <td>constant</td>
-            </tr>
-            <tr>
-                <td>connected</td>
-                <td>constant</td>
-            </tr>
-            <tr>
-                <td>union</td>
-                <td>linear</td>
-            </tr>
-            <tr>
-                <td>extract</td>
-                <td>linear</td>
-            </tr>
-        </tbody>
-    </thead>
-</table>
 
 ## Papers
 
