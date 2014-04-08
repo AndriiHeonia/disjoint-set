@@ -145,7 +145,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
 
 ## Changelog
 
-### 1.1.1 &mdash; 07.04.2014
+### 1.1.1 &mdash; 08.04.2014
 
 * unit tests done
 
