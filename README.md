@@ -139,11 +139,11 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
 
 ## Changelog
 
-### 1.0.1 &mdash; 07.04.2014
+### 1.1.0 &mdash; 07.04.2014
 
 * connected() method added
 * find() method changed
 
-### 1.0 &mdash; 06.04.2014
+### 1.0.0 &mdash; 06.04.2014
 
 * First Disjoint-set release
