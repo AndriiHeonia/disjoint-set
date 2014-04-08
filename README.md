@@ -37,7 +37,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
         <tr>
             <th>Method</th>
             <th>Returns</th>
-            <th>Order of growth</th>
+            <th>Order of growth (worst case)</th>
             <th>Description</th>
         </tr>
     </thead>
