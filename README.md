@@ -75,7 +75,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
         <tr>
             <td><b>destroy</b>()</code></td>
             <td></td>
-            <td></td>
+            <td>Constant</td>
             <td>Clears data structure.</td>
         </tr>
     </tbody>
