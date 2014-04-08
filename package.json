@@ -20,5 +20,8 @@
     "devDependencies": {
         "mocha": "~1.18.2",
         "jshint": "~2.5.0"
+    },
+    "scripts": {
+        "test": "./node_modules/.bin/mocha -R spec"
     }
 }
