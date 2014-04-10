@@ -12,6 +12,7 @@ function disjointSet() {
 
 var DisjointSet = function() {
     this._relations = {};
+    this._size = {};
 };
 
 DisjointSet.prototype = {
@@ -19,12 +20,20 @@ DisjointSet.prototype = {
         var key = JSON.stringify(val);
         if (typeof this._relations[key] === 'undefined') {
             this._relations[key] = val;
+            this._size[key] = 1;
         }
         return this;
     },
 
     find: function (val) {
-        return this._relations[JSON.stringify(val)];
+        var root = val,
+            key = JSON.stringify(root);
+
+        while (this._relations[key] !== root) {
+            root = this._relations[key];
+            key = JSON.stringify(root);
+        }
+        return root;
     },
 
     connected: function (val1, val2) {
@@ -32,26 +41,40 @@ DisjointSet.prototype = {
     },
 
     union: function (val1, val2) {
-        for (var key in this._relations) {
-            if (this._relations[key] === this.find(val1)) {
-                this._relations[key] = this.find(val2);
-            }
+        var val1Root = this.find(val1),
+            val2Root = this.find(val2),
+            key1 = JSON.stringify(val1),
+            key2 = JSON.stringify(val2);
+
+        if (val1Root === val2Root) { return this; }
+
+        if (this._size[key1] < this._size[key2]) {
+            this._relations[key1] = val2Root;
+            this._size[key1] += this._size[key2];
         }
+        else {
+            this._relations[key2] = val1Root;
+            this._size[key2] += this._size[key1];
+        }
+
         return this;
     },
 
     extract: function () {
-        var resObj = {},
+        var root, val,
+            resObjKey,
+            resObj = {},
             resArr = [];
 
         for (var key in this._relations) {
-            var resKey = JSON.stringify(this._relations[key]);
-            if (typeof resObj[resKey] === 'undefined') {
-                resObj[resKey] = [JSON.parse(key)];
+            val = this._relations[key];
+            root = this.find(val);
+            resObjKey = JSON.stringify(root);
+
+            if (typeof resObj[resObjKey] === 'undefined') {
+                resObj[resObjKey] = [];
             }
-            else {
-                resObj[resKey].push(JSON.parse(key));
-            }
+            resObj[resObjKey].push(JSON.parse(key));
         }
 
         for (var key1 in resObj) {

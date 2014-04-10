@@ -51,19 +51,19 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
         <tr>
             <td><b>union</b>(&lt;Object&gt; val1, &lt;Object&gt; val2)</code></td>
             <td>Boolean</td>
-            <td>Linear</td>
+            <td>Logarithmic</td>
             <td>Сonnects val1 with val2.</td>
         </tr>
         <tr>
             <td><b>find</b>(&lt;Object&gt; val)</code></td>
             <td>String</td>
-            <td>Constant</td>
+            <td>Logarithmic</td>
             <td>Returns identifier of the subset by given value.</td>
         </tr>
         <tr>
             <td><b>connected</b>(&lt;Object&gt; val1, &lt;Object&gt; val2)</code></td>
             <td>Boolean</td>
-            <td>Constant</td>
+            <td>Logarithmic</td>
             <td>Returns true when val1 and val2 are connected.</td>
         </tr>
         <tr>
@@ -149,6 +149,14 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
 * Robert Sedgewick and Kevin Wayne, Algorithms, 4th edition, page 216
 
 ## Changelog
+
+### 1.1.3 &mdash; 10.04.2014
+
+* quick-union algorithm changed to weighted quick-union
+
+### 1.1.2 &mdash; 08.04.2014
+
+* quick-find algorithm changed to quick-union
 
 ### 1.1.1 &mdash; 08.04.2014
 

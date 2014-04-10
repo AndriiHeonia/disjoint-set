@@ -35,8 +35,8 @@ describe('DisjointSet', function() {
             .add(person5)
             .add(person6);
         set.union(person1, person2);
-        set.union(person2, person3);
         set.union(person3, person4);
+        set.union(person2, person3);
         set.union(person5, person6);    
 
     describe('#disjointSet()', function() {
@@ -98,8 +98,22 @@ describe('DisjointSet', function() {
 
     describe('#extract()', function() {
         it('should return array with elements grouped by sets', function() {
-            assert.deepEqual(set.extract()[0], [person1, person2, person3, person4]);
-            assert.deepEqual(set.extract()[1], [person5, person6]);
+            function inArray(what, where) {
+                for(var i=0; i<where.length; i++)
+                    if(JSON.stringify(what) === JSON.stringify(where[i]))
+                        return true;
+                return false;
+            }
+            assert.ok(
+                inArray(person1, set.extract()[0]) &&
+                inArray(person2, set.extract()[0]) &&
+                inArray(person3, set.extract()[0]) &&
+                inArray(person4, set.extract()[0])
+            );
+            assert.ok(
+                inArray(person5, set.extract()[1]) &&
+                inArray(person6, set.extract()[1])
+            );
         })
     })
 
