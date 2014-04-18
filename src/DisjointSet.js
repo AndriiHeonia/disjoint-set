@@ -3,7 +3,6 @@
  * https://github.com/dstructjs/disjoint-set
  */
 
-// TODO: to think about weighted quick-union or quick union with path compression (Sedjwik, page 231)
 (function () { 'use strict';
 
 function disjointSet() {
