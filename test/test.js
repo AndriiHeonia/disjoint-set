@@ -92,7 +92,7 @@ describe('DisjointSet', function() {
     describe('#union()', function() {
         it('should return this for chaining', function() {
             var set = disjointSet();
-            assert.strictEqual(set.union(5), set);
+            assert.strictEqual(set.union(5, 4), set);
         })
     })
 

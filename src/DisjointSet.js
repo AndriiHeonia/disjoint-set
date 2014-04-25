@@ -10,29 +10,31 @@ function disjointSet() {
 }
 
 var DisjointSet = function() {
-    this._relations = {};
-    this._size = {};
+    this._reset();
 };
 
 DisjointSet.prototype = {
     add: function (val) {
-        var key = JSON.stringify(val);
-        if (typeof this._relations[key] === 'undefined') {
-            this._relations[key] = val;
-            this._size[key] = 1;
+        var id = DisjointSet._isPrimitive(val) ? val : val._id = this._lastId++;
+        this._objects[id] = val;
+        if (typeof this._relations[id] === 'undefined') {
+            this._relations[id] = id;
+            this._size[id] = 1;
         }
         return this;
     },
 
     find: function (val) {
-        var root = val,
-            key = JSON.stringify(root);
+        var id = DisjointSet._isPrimitive(val) ? val : val._id;
+        return this._findById(id);
+    },
 
-        while (this._relations[key] !== root) {
-            root = this._relations[key];
-            key = JSON.stringify(root);
+    _findById: function (id) {
+        var rootId = id;
+        while (this._relations[rootId] !== rootId) {
+            rootId = this._relations[rootId];
         }
-        return root;
+        return rootId;
     },
 
     connected: function (val1, val2) {
@@ -40,40 +42,37 @@ DisjointSet.prototype = {
     },
 
     union: function (val1, val2) {
-        var val1Root = this.find(val1),
-            val2Root = this.find(val2),
-            key1 = JSON.stringify(val1),
-            key2 = JSON.stringify(val2);
+        var val1RootId = this.find(val1),
+            val2RootId = this.find(val2),
+            val1Id = DisjointSet._isPrimitive(val1) ? val1 : val1._id,
+            val2Id = DisjointSet._isPrimitive(val2) ? val2 : val2._id;
 
-        if (val1Root === val2Root) { return this; }
+        if (val1RootId === val2RootId) { return this; }
 
-        if (this._size[key1] < this._size[key2]) {
-            this._relations[key1] = val2Root;
-            this._size[key1] += this._size[key2];
+        if (this._size[val1Id] < this._size[val2Id]) {
+            this._relations[val1Id] = val2RootId;
+            this._size[val1Id] += this._size[val2Id];
         }
         else {
-            this._relations[key2] = val1Root;
-            this._size[key2] += this._size[key1];
+            this._relations[val2Id] = val1RootId;
+            this._size[val2Id] += this._size[val1Id];
         }
 
         return this;
     },
 
     extract: function () {
-        var root, val,
-            resObjKey,
+        var rootId,
             resObj = {},
             resArr = [];
 
-        for (var key in this._relations) {
-            val = this._relations[key];
-            root = this.find(val);
-            resObjKey = JSON.stringify(root);
+        for (var id in this._relations) {
+            rootId = this._findById(id);
 
-            if (typeof resObj[resObjKey] === 'undefined') {
-                resObj[resObjKey] = [];
+            if (typeof resObj[rootId] === 'undefined') {
+                resObj[rootId] = [];
             }
-            resObj[resObjKey].push(JSON.parse(key));
+            resObj[rootId].push(this._objects[id]);
         }
 
         for (var key1 in resObj) {
@@ -84,7 +83,24 @@ DisjointSet.prototype = {
     },
 
     destroy: function () {
+        this._reset();
+    },
+
+    _reset: function() {
+        this._objects = {};
         this._relations = {};
+        this._size = {};
+        this._lastId = 0;
+    }
+};
+
+DisjointSet._isPrimitive = function(val) {
+    if (Object.prototype.toString.call(val) === '[object String]' ||
+        Object.prototype.toString.call(val) === '[object Number]') {
+        return true;
+    }
+    else {
+        return false;
     }
 };
 
