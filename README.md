@@ -152,6 +152,10 @@ Use to solve network connectivity problem.
 
 ## Changelog
 
+### 1.1.4 &mdash; 25.04.2014
+
+* performance optimization: stringify key generator changed to Numerical ids
+
 ### 1.1.3 &mdash; 10.04.2014
 
 * quick-union algorithm changed to weighted quick-union

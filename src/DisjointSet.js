@@ -15,7 +15,7 @@ var DisjointSet = function() {
 
 DisjointSet.prototype = {
     add: function (val) {
-        var id = DisjointSet._isPrimitive(val) ? val : val._id = this._lastId++;
+        var id = this._isPrimitive(val) ? val : val._disjointSetId = this._lastId++;
         this._objects[id] = val;
         if (typeof this._relations[id] === 'undefined') {
             this._relations[id] = id;
@@ -25,7 +25,7 @@ DisjointSet.prototype = {
     },
 
     find: function (val) {
-        var id = DisjointSet._isPrimitive(val) ? val : val._id;
+        var id = this._isPrimitive(val) ? val : val._disjointSetId;
         return this._findById(id);
     },
 
@@ -44,8 +44,8 @@ DisjointSet.prototype = {
     union: function (val1, val2) {
         var val1RootId = this.find(val1),
             val2RootId = this.find(val2),
-            val1Id = DisjointSet._isPrimitive(val1) ? val1 : val1._id,
-            val2Id = DisjointSet._isPrimitive(val2) ? val2 : val2._id;
+            val1Id = this._isPrimitive(val1) ? val1 : val1._disjointSetId,
+            val2Id = this._isPrimitive(val2) ? val2 : val2._disjointSetId;
 
         if (val1RootId === val2RootId) { return this; }
 
@@ -86,7 +86,20 @@ DisjointSet.prototype = {
         this._reset();
     },
 
-    _reset: function() {
+    _isPrimitive: function (val) {
+        if (typeof this.IS_PRIMITIVE !== 'undefined') {
+            return this.IS_PRIMITIVE;
+        }
+        else {
+            this.IS_PRIMITIVE = DisjointSet._isPrimitive(val);
+            return this.IS_PRIMITIVE;
+        }
+    },
+
+    _reset: function () {
+        for (var id in this._objects) {
+            delete this._objects[id]._disjointSetId;
+        }
         this._objects = {};
         this._relations = {};
         this._size = {};
@@ -94,7 +107,7 @@ DisjointSet.prototype = {
     }
 };
 
-DisjointSet._isPrimitive = function(val) {
+DisjointSet._isPrimitive = function (val) {
     if (Object.prototype.toString.call(val) === '[object String]' ||
         Object.prototype.toString.call(val) === '[object Number]') {
         return true;

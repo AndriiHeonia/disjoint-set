@@ -72,3 +72,10 @@ extract()  4592
 100000 find()  217
 extract()  25
 */
+
+/* type checking cache added
+100000 add()  84
+100000 union()  34
+100000 find()  24
+extract()  94
+*/
