@@ -16,7 +16,7 @@ var DisjointSet = function() {
 DisjointSet.prototype = {
     add: function (val) {
         var id = this._isPrimitive(val) ? val : this._lastId;
-        if (typeof this._relations[id] === 'undefined') {
+        if (typeof val._disjointSetId === 'undefined') {
             val._disjointSetId = this._relations[id] = id;
             this._objects[id] = val;
             this._size[id] = 1;
