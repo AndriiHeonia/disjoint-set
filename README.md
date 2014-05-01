@@ -152,6 +152,10 @@ Use to solve network connectivity problem.
 
 ## Changelog
 
+### 1.1.5 &mdash; 01.05.2014
+
+* critical bug (wrong subtree connections) fixed
+
 ### 1.1.4 &mdash; 25.04.2014
 
 * performance optimization: stringify key generator changed to Numerical ids
