@@ -1,5 +1,5 @@
 {
-    "name": "Disjoint-set",
+    "name": "disjoint-set",
     "version": "1.1.5",
     "description": "Data structure that helps to solve network connectivity problem using two operations: 1) connect two objects; 2) answers the question of whether the two objects in the same set?",
     "homepage": "https://github.com/dstructjs/disjoint-set",
@@ -10,11 +10,10 @@
         "algorithm",
         "math"
     ],
-    "author": "Andrey Geonya",
+    "author": "Andrey Geonya <a.geonya@gmail.com>",
     "repository": {
-    "type":
-        "git",
-        "url": "https://github.com/dstructjs/disjoint-set"
+        "type": "git",
+        "url": "git://github.com/AndreyGeonya/disjoint-set"
     },
     "main": "./src/DisjointSet.js",
     "devDependencies": {
