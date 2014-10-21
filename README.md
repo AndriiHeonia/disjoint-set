@@ -150,6 +150,10 @@ Use to solve network connectivity problem.
 
 ## Changelog
 
+### 1.1.6 &mdash; 21.10.2014
+
+* minor fixes (readme, package.json)
+
 ### 1.1.5 &mdash; 01.05.2014
 
 * critical bug (wrong subtree connections) fixed

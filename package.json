@@ -1,7 +1,7 @@
 {
     "name": "disjoint-set",
-    "version": "1.1.5",
-    "description": "Data structure that helps to solve network connectivity problem using two operations: 1) connect two objects; 2) answers the question of whether the two objects in the same set?",
+    "version": "1.1.6",
+    "description": "Data structure that helps to solve network connectivity problem using two operations: 1) connect two objects; 2) check or two objects are connected.",
     "homepage": "https://github.com/dstructjs/disjoint-set",
     "keywords": [
         "disjoint-set",
