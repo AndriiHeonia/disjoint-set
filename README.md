@@ -154,6 +154,10 @@ Use to solve network connectivity problem.
 
 ## Changelog
 
+### 1.1.7 &mdash; 04.02.2015
+
+* minor fixes (readme, package.json)
+
 ### 1.1.6 &mdash; 21.10.2014
 
 * minor fixes (readme, package.json)
