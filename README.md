@@ -7,7 +7,7 @@ Disjoint-set is a data structure that keeps track of a set of elements partition
 
 Use to solve network connectivity problem.
 
-[![Build Status](https://travis-ci.org/AndreyGeonya/disjoint-set.svg?branch=master)](https://travis-ci.org/AndreyGeonya/disjoint-set)
+[![Build Status](https://travis-ci.org/AndriiHeonia/disjoint-set.svg?branch=master)](https://travis-ci.org/AndriiHeonia/disjoint-set)
 
 ## API
 
