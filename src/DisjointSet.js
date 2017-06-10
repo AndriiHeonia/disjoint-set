@@ -1,6 +1,6 @@
 /**
- * (c) 2014, Andrey Geonya
- * https://github.com/dstructjs/disjoint-set
+ * (c) 2014, Andrii Heonia
+ * https://github.com/AndriiHeonia/disjoint-set
  */
 
 (function () { 'use strict';
